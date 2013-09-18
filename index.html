@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Simple-graph by kwiatek5</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/kwiatek5/simple-graph">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/kwiatek5/simple-graph/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/kwiatek5/simple-graph/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Simple-graph</h1>
+          <p></p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/kwiatek5">kwiatek5</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <div class="highlight highlight-php"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Example</span>
+
+<span class="nv">$v1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vertex</span><span class="p">(</span><span class="s1">'v1'</span><span class="p">);</span>
+<span class="nv">$v2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vertex</span><span class="p">(</span><span class="s1">'v2'</span><span class="p">);</span>
+<span class="nv">$v3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vertex</span><span class="p">(</span><span class="s1">'v3'</span><span class="p">);</span>
+<span class="nv">$v4</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vertex</span><span class="p">(</span><span class="s1">'v4'</span><span class="p">);</span>
+<span class="nv">$v5</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vertex</span><span class="p">(</span><span class="s1">'v5'</span><span class="p">);</span>
+
+<span class="nv">$e12</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Edge</span><span class="p">(</span><span class="nv">$v1</span><span class="p">,</span> <span class="nv">$v2</span><span class="p">);</span>
+<span class="nv">$e13</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Edge</span><span class="p">(</span><span class="nv">$v1</span><span class="p">,</span> <span class="nv">$v3</span><span class="p">);</span>
+<span class="nv">$e14</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Edge</span><span class="p">(</span><span class="nv">$v1</span><span class="p">,</span> <span class="nv">$v4</span><span class="p">);</span>
+<span class="nv">$e15</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Edge</span><span class="p">(</span><span class="nv">$v1</span><span class="p">,</span> <span class="nv">$v5</span><span class="p">);</span>
+
+<span class="nv">$e23</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Edge</span><span class="p">(</span><span class="nv">$v2</span><span class="p">,</span> <span class="nv">$v3</span><span class="p">);</span>
+<span class="nv">$e24</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Edge</span><span class="p">(</span><span class="nv">$v2</span><span class="p">,</span> <span class="nv">$v4</span><span class="p">);</span>
+<span class="nv">$e25</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Edge</span><span class="p">(</span><span class="nv">$v2</span><span class="p">,</span> <span class="nv">$v5</span><span class="p">);</span>
+
+<span class="nv">$e34</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Edge</span><span class="p">(</span><span class="nv">$v3</span><span class="p">,</span> <span class="nv">$v4</span><span class="p">);</span>
+<span class="nv">$e35</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Edge</span><span class="p">(</span><span class="nv">$v3</span><span class="p">,</span> <span class="nv">$v5</span><span class="p">);</span>
+
+<span class="nv">$e45</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Edge</span><span class="p">(</span><span class="nv">$v4</span><span class="p">,</span> <span class="nv">$v5</span><span class="p">);</span>
+
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$v1</span><span class="p">);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$v2</span><span class="p">);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$v3</span><span class="p">);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$v4</span><span class="p">);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$v5</span><span class="p">);</span>
+
+<span class="nv">$g</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Graph</span><span class="p">();</span>
+
+<span class="k">echo</span> <span class="nv">$g</span><span class="o">-&gt;</span><span class="na">addEdge</span><span class="p">(</span><span class="nv">$e12</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$g</span><span class="o">-&gt;</span><span class="na">addEdge</span><span class="p">(</span><span class="nv">$e13</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$g</span><span class="o">-&gt;</span><span class="na">addEdge</span><span class="p">(</span><span class="nv">$e14</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$g</span><span class="o">-&gt;</span><span class="na">addEdge</span><span class="p">(</span><span class="nv">$e15</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$g</span><span class="o">-&gt;</span><span class="na">addEdge</span><span class="p">(</span><span class="nv">$e23</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$g</span><span class="o">-&gt;</span><span class="na">addEdge</span><span class="p">(</span><span class="nv">$e24</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$g</span><span class="o">-&gt;</span><span class="na">addEdge</span><span class="p">(</span><span class="nv">$e25</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$g</span><span class="o">-&gt;</span><span class="na">addEdge</span><span class="p">(</span><span class="nv">$e34</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$g</span><span class="o">-&gt;</span><span class="na">addEdge</span><span class="p">(</span><span class="nv">$e35</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$g</span><span class="o">-&gt;</span><span class="na">addEdge</span><span class="p">(</span><span class="nv">$e45</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$e12</span><span class="p">);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$e13</span><span class="p">);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$e14</span><span class="p">);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$e15</span><span class="p">);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$e23</span><span class="p">);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$e24</span><span class="p">);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$e25</span><span class="p">);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$e34</span><span class="p">);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$e35</span><span class="p">);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$e45</span><span class="p">);</span>
+
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$g</span><span class="o">-&gt;</span><span class="na">getGraph</span><span class="p">());</span>
+</pre></div>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>

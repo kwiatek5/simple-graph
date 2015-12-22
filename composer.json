@@ -1,0 +1,15 @@
+{
+    "name": "kwiatek5/simple-graph",
+    "authors": [
+        {
+            "name": "kwiatek5",
+            "email": "kwiatek5@vp.pl"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Kwiatek5\\Graph\\": "src/"
+        }
+    }
+}
